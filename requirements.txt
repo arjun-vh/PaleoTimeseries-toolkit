@@ -1,0 +1,64 @@
+# =============================================================================
+# paleo-timeseries-toolkit — requirements.txt
+# =============================================================================
+# Tested environment: Python 3.11, Windows 10/11
+# Exact confirmed versions (paleo_analysis conda env, 2026-08-07):
+#
+#   numpy        1.26.4
+#   pandas       3.0.5
+#   matplotlib   3.11.1
+#   scipy        1.15.3
+#   pyleoclim    1.2.1
+#   nbformat     5.10.4
+#   openpyxl     3.1.5
+#   jupyterlab   4.6.2
+#
+# Installation:
+#   pip install -r requirements.txt
+#
+# NOTE: Conda is strongly preferred over pip (see environment.yml).
+# pyleoclim depends on numba + llvmlite (compiled C extensions) that can
+# fail to resolve on some platforms via pip. If pip install fails, use:
+#   conda env create -f environment.yml
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Core scientific stack
+# ---------------------------------------------------------------------------
+numpy>=1.24,<2.0          # Array operations; pyleoclim 1.x requires numpy <2.0
+pandas>=2.0               # DataFrame I/O, time-series manipulation
+scipy>=1.11               # Signal processing, chi-squared CDF, gamma functions
+
+# ---------------------------------------------------------------------------
+# Visualization
+# ---------------------------------------------------------------------------
+matplotlib>=3.7           # All plots; ScalarFormatter and mticker used directly
+
+# ---------------------------------------------------------------------------
+# Paleoclimate / wavelet analysis
+# ---------------------------------------------------------------------------
+pyleoclim>=1.2.1,<2.0     # WWZ scalogram and AR(1) significance testing
+                          # API note: c parameter passed as settings={'c': value}
+                          # WARNING: pyleoclim 2.x has breaking API changes — pin to 1.x
+
+# ---------------------------------------------------------------------------
+# Excel file I/O
+# ---------------------------------------------------------------------------
+openpyxl>=3.1             # Required by pandas to read .xlsx files via pd.read_excel()
+
+# ---------------------------------------------------------------------------
+# Jupyter environment
+# ---------------------------------------------------------------------------
+jupyterlab>=4.0           # Recommended interface (JupyterLab)
+notebook>=7.0             # Classic Jupyter Notebook interface (alternative)
+nbformat>=5.9             # Notebook serialization format
+ipykernel>=6.0            # Python kernel registration for Jupyter
+
+# ---------------------------------------------------------------------------
+# Standard library modules (no installation required — listed for reference)
+# ---------------------------------------------------------------------------
+# math       — REDFIT engine: sqrt, exp, log, pi, floor
+# json       — Reproducibility log serialization
+# os, sys    — Path handling, environment inspection
+# datetime   — Timestamp generation in log files
+# warnings   — Controlled warning suppression
