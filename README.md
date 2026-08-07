@@ -1,10 +1,11 @@
 # paleo-timeseries-toolkit
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.placeholder-blue)](https://zenodo.org/)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/)
+
 A reference-grade, pedagogical, and fully reproducible toolkit for analyzing multi-proxy paleoclimate time series. 
 This repository provides quality Python workflows designed specifically for unevenly spaced geological time series. It bridges the gap between raw multi-proxy datasets, multivariate dimensionality reduction, and advanced unevenly-spaced spectral analysis.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
+
 ---
 ## 🌟 Key Features
 1. **Python REDFIT Engine (`redfit38e`)**
