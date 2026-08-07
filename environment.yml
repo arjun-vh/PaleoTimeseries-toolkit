@@ -1,0 +1,50 @@
+# =============================================================================
+# paleo-timeseries-toolkit — environment.yml
+# =============================================================================
+# Creates a fully isolated Conda environment with pinned versions.
+# Tested on: Python 3.11, Windows 10/11 (Anaconda 24.x)
+#
+# Usage:
+#   conda env create -f environment.yml
+#   conda activate paleo-timeseries
+#   jupyter lab
+#
+# To remove the environment:
+#   conda env remove -n paleo-timeseries
+# =============================================================================
+
+name: paleo-timeseries
+
+channels:
+  - conda-forge          # Primary channel — most up-to-date scientific packages
+  - defaults             # Fallback for any packages not on conda-forge
+
+dependencies:
+  # ---- Python runtime -------------------------------------------------------
+  - python=3.11          # 3.11 is stable and well-supported by all dependencies
+
+  # ---- Core scientific stack ------------------------------------------------
+  - numpy>=1.24,<2.0     # pyleoclim 1.x requires numpy <2.0
+  - pandas>=2.0
+  - scipy>=1.11
+
+  # ---- Visualization --------------------------------------------------------
+  - matplotlib>=3.7
+
+  # ---- Excel file support ---------------------------------------------------
+  - openpyxl>=3.1        # Required by pandas for .xlsx files
+
+  # ---- Jupyter environment --------------------------------------------------
+  - jupyterlab>=4.0
+  - notebook>=7.0
+  - nbformat>=5.9
+  - ipykernel>=6.0
+
+  # ---- Compiled acceleration (required by pyleoclim/WWZ) -------------------
+  - numba>=0.57          # JIT compilation for Kirchner_numba WWZ backend
+  - llvmlite             # LLVM bindings — numba dependency (Conda resolves this cleanly)
+
+  # ---- pip-only packages ----------------------------------------------------
+  - pip
+  - pip:
+    - pyleoclim>=1.2.1,<2.0   # Install via pip — conda-forge version may lag behind
