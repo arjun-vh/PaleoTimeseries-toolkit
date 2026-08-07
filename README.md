@@ -1,7 +1,7 @@
 # PaleoTimeseries-toolkit
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/arjun-vh/PaleoTimeseries-toolkit/HEAD?urlpath=lab)
 
 A reference-grade, pedagogical, and fully reproducible toolkit for analyzing multi-proxy paleoclimate time series. 
 This repository provides quality Python workflows designed specifically for unevenly spaced geological time series. It bridges the gap between raw multi-proxy datasets, multivariate dimensionality reduction, and advanced unevenly-spaced spectral analysis.
