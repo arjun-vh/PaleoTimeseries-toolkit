@@ -28,11 +28,15 @@
 numpy>=1.24,<2.0          # Array operations; pyleoclim 1.x requires numpy <2.0
 pandas>=2.0               # DataFrame I/O, time-series manipulation
 scipy>=1.11               # Signal processing, chi-squared CDF, gamma functions
+scikit-learn>=1.2         # PCA, iterative imputers, FastICA
+statsmodels>=0.14         # ADF and KPSS stationarity tests
 
 # ---------------------------------------------------------------------------
 # Visualization
 # ---------------------------------------------------------------------------
 matplotlib>=3.7           # All plots; ScalarFormatter and mticker used directly
+seaborn>=0.12             # Heatmaps for correlation and PCA loadings
+umap-learn>=0.5           # Non-linear dimensionality reduction (UMAP)
 
 # ---------------------------------------------------------------------------
 # Paleoclimate / wavelet analysis
@@ -40,6 +44,7 @@ matplotlib>=3.7           # All plots; ScalarFormatter and mticker used directly
 pyleoclim>=1.2.1,<2.0     # WWZ scalogram and AR(1) significance testing
                           # API note: c parameter passed as settings={'c': value}
                           # WARNING: pyleoclim 2.x has breaking API changes — pin to 1.x
+factor-analyzer>=0.5      # Oblique-rotation Factor Analysis
 
 # ---------------------------------------------------------------------------
 # Excel file I/O
