@@ -15,9 +15,11 @@ This repository provides quality Python workflows designed specifically for unev
 2. **Weighted Wavelet Z-Transform (WWZ)**
    * Time-frequency analysis utilizing the WWZ method (Foster, 1996) optimized for unevenly spaced series via `pyleoclim`.
    * Integrates cross-method validation, overlaying significant REDFIT peaks directly on the WWZ scalogram.
-3. **Multi-Proxy Dimensionality Reduction (PCA)**
+3. **Multi-Proxy Analysis & Dimensionality Reduction (PCA)**
    * Pipeline for handling multivariate proxy datasets (e.g., microfossil abundances, geochemical markers).
-   * Implements exploratory data analysis, correlation profiling, and Principal Component Analysis (PCA) to extract independent climatic modes.
+   * Implements mathematically rigorous exploratory data analysis, including localized stationarity testing (ADF/KPSS) and automated normality transformations (Yeo-Johnson).
+   * Features highly advanced, autocorrelation-corrected cross-correlations using Bartlett's $N_{eff}$ and Isospectral Phase Randomization (Surrogates).
+   * Supports multiple dimensionality reduction techniques including PCA (with AR(1) Parallel Analysis for component retention), Factor Analysis, and FastICA.
 4. **Reproducibility & Pedagogy**
    * Comprehensive markdown cells explaining the mathematical physics, parameter ranges, and potential geological pitfalls.
    * Reproducibility logs capturing seeds, package versions, and configuration matrices.
@@ -31,20 +33,12 @@ paleo-timeseries-toolkit/
 ├── requirements.txt                     # Pip dependencies
 │
 ├── notebooks/
-│   ├── REDFIT_WWZ_Reference.ipynb       # Spectral & Wavelet Analysis Notebook
-│   └── TimeSeries_PCA_Reference.ipynb   # Multi-Proxy PCA Notebook (Companion)
+│   ├── REDFIT_WWZ_Reference.ipynb       # Spectral & Wavelet Analysis (Lomb-Scargle, AR(1) red noise)
+│   └── TimeSeries_PCA_Reference.ipynb   # Multi-Proxy Analysis (EDA, Autocorrelation-corrected CCF, PCA, FA)
 │
-├── redfit_engine/
-│   ├── __init__.py
-│   └── redfit38e_python.py              # Standalone, importable REDFIT engine
-│
-├── data/
-│   ├── README.md                        # Data documentation & licenses
-│   └── example_15ka.xlsx                # Sample multi-proxy dataset
-│
-└── tests/
-    ├── test_engine_fortran_parity.py    # Numerical unit tests matching Fortran output
-    └── test_reproducibility.py          # Seed verification tests
+└── redfit_engine/
+    ├── __init__.py                      # Package initialization
+    └── redfit38e_python.py              # Standalone, importable Python port of the REDFIT engine
 ```
 ---
 ## 🚀 Quick Start
